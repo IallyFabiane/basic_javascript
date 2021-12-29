@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados com JS</title>
+     <style>
+         body {
+             font-size: 1em;
+             font-family: Arial, Helvetica, sans-serif;
+         }
+         h1 {
+             font-size: 2em;
+             font-family: 'Times New Roman', Times, serif;
+         }
+         button {
+             padding: 30px;
+             border-radius: 7px;
+             background-image: linear-gradient(to bottom, pink, purple)
+         }
+     </style>
+</head>
+<body>
+    <h1>Trabalhando com Dados v2.0</h1>
+    <button onclick="inicio()">Clique para começar...</button>
+    <section id="resultado">
+        <p>Aqui aparecerá o resultado...</p>
+    </section>
+    <script>
+        function inicio() {
+            let nome = window.prompt('Qual é o seu nome? ')
+            let res = window.document.getElementById('resultado')
+            res.innerHTML += `<p>Olá, <strong>${nome}</strong>! É um grane prazer te conhecer! &#x1F596;`
+        }
+    </script>
+</body>
+</html>
