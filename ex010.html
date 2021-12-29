@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e Depois</title>
+    <style>
+        h1 {
+            font: 2em Arial;
+            color: blue;
+            font-weight: bolder;
+        }
+        button {
+            padding: 30px;
+            border-radius: 10px;
+            background-color: cadetblue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antes e Depois</h1>
+    <button onclick="clique()">Antecessor e Sucessor</button>
+    <script>
+        function clique() {
+            var nome = window.prompt('Digite um número qualquer: ')
+            var ant = nome - 1
+            var suc = ant + 2
+            window.alert(`Antes de ${nome} vem ${ant}`+ `Depois de ${nome} vem ${suc}.`)
+        }
+    </script>
+</body>
+</html>
