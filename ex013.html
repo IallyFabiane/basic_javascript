@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <style>
+        h1 {
+            font: 20pt Arial;
+            font-weight: bold;
+            color: darkgreen;
+        }
+        button {
+            padding: 30px;
+            border: 2px dotted black;
+            border-radius: 10px;
+            background-color: yellow;
+            color: black;
+            font-size: 14pt;
+        }
+        section#resultado {
+            padding: 20px;
+            text-align: justify;
+            text-indent: 2px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convertendo temperaturas</h1>
+    <button onclick="conversor()">Converter</button>
+    <section id="resultado">
+        <p>Clique no botão para iniciar</p>
+    </section>
+    <script>
+        function conversor() {
+            let temperatura = window.prompt('Digite a temperatura em graus °C (Celsius)')
+            let kelvin = temperatura + 273.15
+            let fahrenheit = (temperatura * 9/5) + 32
+            let res = window.document.getElementById('resultado')
+            res.innerHTML = `<strong>A temperatura de ${temperatura} °C corresponde a...</strong> <br/>`
+            res.innerHTML += `${kelvin} K (Kelvin) <br/>`
+            res.innerHTML += `${fahrenheit} F (Fahrenheit) <br/>`
+        }
+    </script>
+</body>
+</html>
