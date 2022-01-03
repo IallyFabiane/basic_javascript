@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar salário</title>
+    <style>
+        h1 {
+            font: 2.2em Arial;
+            font-weight: bold;
+            color: darkblue;
+            text-align: center;
+            padding: 0px 20px;
+        }
+        button {
+            padding: 30px;
+            margin: 0px auto;
+            border: dotted black;
+            border-radius: 10px;
+            background-color: aqua;
+            opacity: 0.6;
+            display: block;
+            font: 16pt Times New Roman;
+            font-weight: bold;
+            color: midnightblue;
+        }
+        section#resultado {
+            font: 1.5em Arial;
+            line-height: 50px;
+        }
+        p {
+            font: 22px Arial;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste de salário</h1>
+    <button onclick="reajuste()">Reajustar salário</button>
+    <section id="resultado">
+        <p>Clique no botão acima para iniciar</p>
+    </section>
+    <script>
+        function reajuste() {
+            let nome = window.prompt('Qual é o nome do funcionário? ')
+            let salario = Number(window.prompt(`Qual o salário de ${nome}?`))
+            let porcentagem = window.prompt(`O salário de ${nome} será reajustado em qual porcentagem?`)
+            let aumento = salario * porcentagem
+            let salarioatual = aumento + salario
+            let res = window.document.getElementById('resultado')
+            res.innerHTML += `<strong>${nome} recebeu um aumento salarial!</strong> </br>`
+            res.innerHTML += `<small>O salário atual era R$ ${salario}.</small> </br>`
+            res.innerHTML += `<small>Com um aumento de ${porcentagem}, o salário vai aumentar ${aumento} no próximo mês.</small> </br>`
+            res.innerHTML += `<small>A partir daí, ${nome} vai passar a receber R$ ${salarioatual}.</small>`
+        }
+    </script>
+</body>
+</html>
