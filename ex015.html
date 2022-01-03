@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Desconto</title>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, #0CD3F7, #00E0C7);
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        h1 {
+            font: 2.2em Arial;
+            color: darkred;
+            font-weight: bold;
+            text-align: center;
+        }
+        button {
+            padding: 30px;
+            margin: 0px auto;
+            display: block;
+            border: double;
+            border-radius: 10px;
+            background-color: gold;
+            opacity: 0.6;
+            font-size: 16pt;
+        }
+        p {
+            font-size: 18pt;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        section#resultado {
+            line-height: 50px;
+            font-size: 20pt;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <button onclick="desconto()"><strong>Desconto de 10%</strong></button>
+    <section id="resultado">
+        <p>Clique no botão acima para iniciar</p>
+    </section>
+    <script>
+        function desconto() {
+            let produto = window.prompt('Qual é o produto que você está comprando? ')
+            let preço = window.prompt(`Qual é o preço de ${produto}? `)
+            let desconto = (preço * 1.10) - preço
+            let preçofinal = preço - desconto
+            let res = window.document.getElementById('resultado')
+            res.innerHTML = `<strong>Calculando desconto de 10% para ${produto}...</strong> <br/>`
+            res.innerHTML += `<small>O preço original era R$ ${preço}</small>. <br/>`
+            res.innerHTML += `<small>Você acaba de ganhar R$ ${desconto} de desconto</small>. <br/>`
+            res.innerHTML += `<small>Você pagará R$ ${preçofinal} no produto ${produto}</small>.`
+        }
+    </script>
+</body>
+</html>
