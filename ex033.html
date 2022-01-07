@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Bissexto</title>
+    <style>
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        body {
+            font: 20pt Arial;
+        }
+        button {
+            padding: 30px;
+            background-color: coral;
+            opacity: 0.5;
+            font: 14pt Arial;
+            font-weight: bold;
+            border: darkblue dashed;
+            border-radius: 10px;
+            margin: 0px auto;
+            display: block;
+        }
+        section#resultado {
+            line-height: 50px;
+        }
+        mark.bi {
+            background-color: rgba(0, 255, 128, 0.63);
+        }
+        mark.notbi {
+            background-color: rgba(255, 0, 0, 0.555);
+        }
+    </style>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <button onclick="ano()">Verificar</button>
+    <section id="resultado">
+        <p>Informe um ano para saber se ele é bissexto.</p>
+    </section>
+    <script>
+        function ano() {
+        let ano = window.prompt('Qual o ano que você quer analisar? ')
+        let resultado = window.document.getElementById('resultado')
+        resultado.innerHTML = `<strong>Analisando o ano de ${ano}...</strong> </br>`
+        if (ano % 400 == 0) {
+            resultado.innerHTML += `O ano de ${ano} <mark class="bi">É BISSEXTO</mark> &#x2705  </br>`
+        } else if (ano % 4 == 0 && ano % 100 != 0) {
+            resultado.innerHTML += `O ano de ${ano} <mark class="bi">É BISSEXTO</mark> &#x2705  </br>`
+        } else {
+            resultado.innerHTML += `O ano de ${ano} <mark class="notbi">NÃO É BISSEXTO</mark> &#x274C `
+        }
+        }
+    </script>
+</body>
+</html>
