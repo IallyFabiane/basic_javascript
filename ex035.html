@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h, initial-scale=1.0">
+    <title>Situação do Aluno</title>
+    <style>
+        h1 {
+            font: 3em Times New Roman;
+            font-weight: bold;
+            color: blueviolet;
+            text-align: center;
+        }
+        button {
+            padding: 30px;
+            color: white;
+            font: 1em Arial;
+            font-weight: bold;
+            border: dashed gold;
+            border-radius: 10px;
+            background-image: linear-gradient(to bottom, blue, navy);
+            margin: 0px auto;
+            display: block;
+        }
+        section#resultado {
+            font: 20pt Arial;
+            line-height: 50px;
+        }
+        mark.ap {
+            background-color: rgba(172, 255, 47, 0.603);
+            color: teal;
+            font-weight: bold;
+        }
+        mark.rec {
+            background-color: rgba(255, 255, 0, 0.562);
+            color: orange;
+            font-weight: bold;
+        }
+        mark.rep {
+            background-color: rgba(255, 68, 0, 0.562);
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <button onclick="nota()">Entrar com as notas</button>
+    <section id="resultado">
+        <p>Clique no botão acima para informar as notas do aluno.</p>
+    </section>
+    <script>
+        function nota() {
+            let nome = window.prompt('Qual o nome do aluno? ')
+            let nota1 = Number(window.prompt(`Primeira nota de ${nome}`))
+            let nota2 =  Number(window.prompt(`Segunda nota de ${nome}`))
+            let media = Number((nota1 + nota2) / 2)
+            let resultado = window.document.getElementById('resultado')
+            resultado.innerHTML = `<strong>Analisando a situação de ${nome}</strong> </br>`
+            if (media > 6) {
+                resultado.innerHTML += `Com as notas ${nota1} e ${nota2}, <strong>a média é ${media}</strong>. </br>`
+                resultado.innerHTML += `Com a média de ${media}, o aluno está <mark class="ap">APROVADO</mark> `
+            } else if (media > 3 && media <= 6) {
+                resultado.innerHTML += `Com as notas ${nota1} e ${nota2}, <strong> a média é ${media}</strong>. </br>`
+                resultado.innerHTML += `Com a média de ${media}, o aluno está <mark class="rec">EM RECUPERAÇÃO</mark> `
+            } else {
+                resultado.innerHTML += `Com as notas ${nota1} e ${nota2}, <strong> a média é ${media}</strong>. </br>`
+                resultado.innerHTML += `Com a média de ${media}, o aluno está <mark class="rep">REPROVADO</mark> ` 
+            }
+        }
+    </script>
+</body>
+</html>
