@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        h1 {
+            font: 25pt Arial;
+            font-weight: bold;
+            color: midnightblue;
+            text-align: center;
+        }
+        section#resultado {
+            font: 1.5em Arial;
+            line-height: 50px;
+        }
+        button {
+            padding: 30px;
+            color: yellow;
+            font: 1.5em Arial;
+            font-weight: bold;
+            background-color: turquoise;
+            opacity: 0.5;
+            border: solid navy;
+            border-radius: 10px;
+            margin: 0px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço modificado</h1>
+    <button onclick="preço()">Verificar</button>
+    <section id="resultado">
+        <p>Clique no botão acima para analisar a mudança de preço.</p>
+    </section>
+    <script>
+        function preço() {
+            let preçoantes = Number(window.prompt('Qual era o preço anterior? '))
+            let preçodepois = Number(window.prompt('Qual é o preço atual? '))
+            let resultado = window.document.getElementById('resultado')
+            resultado.innerHTML = '<strong>Analisando os valores informados</strong> </br>'
+            if (preçodepois < preçoantes) {
+                let desconto = Number(preçoantes - preçodepois)
+                let porcentagem = (preçoantes - preçodepois)/100
+                resultado.innerHTML += `<small>O produto custava R$ ${preçoantes} e agora custa R$ ${preçodepois}.</small> </br>`
+                resultado.innerHTML += `<small>Hoje o produto está mais barato.</small> </br>`
+                resultado.innerHTML += `<small>O preço baixou R$ ${desconto} em relação ao preço anterior.</small> </br>`
+                resultado.innerHTML += `<small>Uma variação de ${porcentagem} % para baixo</small>`
+            } else if (preçodepois > preçoantes) {
+                let aumento = Number(preçodepois - preçoantes)
+                let percentual = (preçodepois - preçoantes)/100
+                resultado.innerHTML += `<small>O produto custava R$ ${preçoantes} e agora custa R$ ${preçodepois}.</small> </br>`
+                resultado.innerHTML += `<small>Hoje o produto está mais caro.</small> </br>`
+                resultado.innerHTML += `<small>O preço aumentou R$ ${aumento} em relação ao preço anterior.</small> </br>`
+                resultado.innerHTML += `<small>Uma variação de ${percentual} % para cima.</small> `
+            } else {
+                
+            }
+        }
+    </script>
+</body>
+</html>
