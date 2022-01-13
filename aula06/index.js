@@ -1,0 +1,7 @@
+alert('Hello, world!')
+confirm('Você quer ver esse conteúdo?')
+prompt('Qual o seu nome?')
+let num1 = prompt('Digite um número;')
+let num2 = prompt('Digite outro número:')
+let resultado = Number(num1 + num2)
+alert(`O resultado foi ${resultado}`)

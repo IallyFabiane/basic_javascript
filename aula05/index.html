@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios</title>
+</head>
+<body>
+    <script>
+        const nome = window.prompt('Digite seu nome completo:')
+        let letras = nome.length
+        let segLetra = nome[1]
+        let priA = nome.indexOf('a')
+        let ultA = nome.lastIndexOf('a')
+        let ultLetras = nome.slice(-3)
+        let palavras = nome.split(' ')
+        let maiusculas = nome.toUpperCase()
+        let minusculas = nome.toLowerCase()
+        document.body.innerHTML = `O seu nome é <strong>${nome}</strong>. </br>`
+        document.body.innerHTML += `O seu nome tem <strong>${letras}</strong> letras. </br>`
+        document.body.innerHTML += `A segunda letra do seu nome é <strong>"${segLetra}"</strong>. </br>`
+        document.body.innerHTML += `O primeiro índice da letra "a" no seu nome é <strong>${priA}</strong>. </br> `
+        document.body.innerHTML += `O último índice da letra "a" no seu nome é <strong>${ultA}</strong>. </br> `
+        document.body.innerHTML += `As últimas três letras do seu nome são <strong>${ultLetras}</strong>. </br>`
+        document.body.innerHTML += `As palvras do seu nome são <strong>${palavras}</strong>. </br>`
+        document.body.innerHTML += `Seu nome com letras maiúsculas <strong>${maiusculas}</strong>. </br>`
+        document.body.innerHTML += `Seu nome com letras minúsculas <strong>${minusculas}</strong>. </br>`
+    </script>
+</body>
+</html>
