@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios</title>
+    <style>
+        h1#title {
+            font: 2em Arial;
+            color: black;
+            font-weight: bold;
+            background-color: rgba(0, 255, 255, 0.637);
+        }
+        body {
+            font: 1em Arial;
+            background-color: lightgrey;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1 id="title"> <span id="number"></span></h1>
+    </section>
+    <script>
+        let num1 = 55
+        let inteiro = Number.isInteger(num1)
+        let notanumber = Number.isNaN(num1)
+        let arredtop = Math.ceil(num1)
+        let arreddown = Math.floor(num1)
+        let fixed = num1.toFixed(2)
+        let title = window.document.getElementById('title')
+        number.innerHTML = 'Seu número é 55 </br>'
+        document.body.innerHTML += `Raiz quadrada: <strong>${55 ** (1/2)}</strong>. </br>`
+        document.body.innerHTML += `55 é inteiro: <strong>${inteiro}</strong>. </br>`
+        document.body.innerHTML += `É NaN: <strong>${notanumber}</strong>. </br>`
+        document.body.innerHTML += `Arredondando para cima: <strong>${arredtop}</strong>. </br>`
+        document.body.innerHTML += `Arredondando para baixo: <strong>${arreddown}</strong>. </br>`
+        document.body.innerHTML += `Com duas casas decimais: <strong>${fixed}</strong>. </br>`
+    </script>
+</body>
+</html>
